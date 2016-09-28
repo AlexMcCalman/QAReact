@@ -4,7 +4,7 @@ import CategoryRow from './NBGCatalogue/CategoryRow.jsx';
 import ProductRow from './NBGCatalogue/ProductRow.jsx';
 import ProductTable from './NBGCatalogue/ProductTable.jsx';
 import SearchBar from './NBGCatalogue/SearchBar.jsx';
-import SearchableTable from './NBGCatalogue/SearchableTable/jsx';
+import SearchableTable from './NBGCatalogue/SearchableTable.jsx';
 
 class App extends React.Component {
     render() {
