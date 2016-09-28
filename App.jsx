@@ -11,8 +11,10 @@ class App extends React.Component {
        return(
             <div>
                 <h1>NB Gardens Catalogue</h1>
-                <SearchableTable products={this.props.products}/>
-                <ProductDetail name="Gnome 1" id="12" description="stuff" price="56" />
+                <div>
+                    <SearchableTable products={this.props.products} style="float:left;"/>
+                    <ProductDetail name="Gnome 1" id="12" description="stuff" price="56" style="float:right;"/>
+                </div>
             </div>
         );
    };
