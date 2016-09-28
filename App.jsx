@@ -12,8 +12,12 @@ class App extends React.Component {
             <div>
                 <h1>NB Gardens Catalogue</h1>
                 <div>
-                    <SearchableTable products={this.props.products} style="float:left;"/>
-                    <ProductDetail name="Gnome 1" id="12" description="stuff" price="56" style="float:right;"/>
+                    <div style={{float: 'left'}}>
+                        <SearchableTable products={this.props.products}/>
+                    </div>
+                    <div style={{display: 'inline-block', padding: 50}}>
+                        <ProductDetail name="Gnome 1" id="12" description="stuff" price="56"/>
+                    </div>
                 </div>
             </div>
         );
