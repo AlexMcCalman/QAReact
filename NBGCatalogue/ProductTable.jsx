@@ -7,11 +7,21 @@ class ProductTable extends React.Component {
         var rows = [];
         var lastCategory = null;
 
-        this.props.products.forEach((product) => {
-            if( (product.name.toLowerCase().indexOf(this.props.searchText.toLowerCase()) === -1) ||
-                (!(product.quantity > 0) && this.props.checkboxValue) ) {
-                    return;
-                }
+        var groupedList = this.props.products.sort((a, b) => {
+                            if(a.category === b.category) {
+                                return a.id - b.id;
+                            }
+
+                            var x = a.category.toLowerCase(), y = b.category.toLowerCase();
+                            return x < y ? -1 : x > y ? 1 : 0;
+                        })
+
+        groupedList.forEach((product) => {
+            if ( (product.name.toLowerCase().indexOf(this.props.searchText.toLowerCase()) === -1) &&
+                 (product.category.toLowerCase().indexOf(this.props.searchText.toLowerCase()) === -1) ||
+                 (!(product.quantity > 0) && this.props.checkboxValue) ) {
+                     return;
+                 }
 
             if (product.category !== lastCategory) {
                 rows.push(<CategoryRow category={product.category}

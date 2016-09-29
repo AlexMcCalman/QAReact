@@ -11,9 +11,7 @@ class App extends React.Component {
         super();
 
         this.state = {
-            selectedProduct: {
-                name: 'Gnome 1', id: 12, description: 'stuff', price: 56
-            }
+            selectedProduct: null
         };
     };
 
