@@ -4,10 +4,10 @@ class ProductDetail extends React.Component {
     render() {
         return (
             <div>
-                <h2>{this.props.name}</h2>
-                <p>ID: {this.props.id}</p>
-                <p>Price: £{this.props.price}</p>
-                <p>{this.props.description}</p>
+                <h2>{this.props.selectedProduct.name}</h2>
+                <p>ID: {this.props.selectedProduct.id}</p>
+                <p>Price: £{this.props.selectedProduct.price}</p>
+                <p>{this.props.selectedProduct.description}</p>
             </div>
         );
     };

@@ -7,6 +7,16 @@ import SearchBar from './NBGCatalogue/SearchBar.jsx';
 import SearchableTable from './NBGCatalogue/SearchableTable.jsx';
 
 class App extends React.Component {
+    constructor() {
+        super();
+
+        this.state = {
+            selectedProduct: {
+                name: 'Gnome 1', id: 12, description: 'stuff', price: 56
+            }
+        };
+    };
+
     render() {
        return(
             <div>
@@ -16,7 +26,7 @@ class App extends React.Component {
                         <SearchableTable products={this.props.products}/>
                     </div>
                     <div style={{display: 'inline-block', padding: 50}}>
-                        <ProductDetail name="Gnome 1" id="12" description="stuff" price="56"/>
+                        <ProductDetail selectedProduct={this.state.selectedProduct}/>
                     </div>
                 </div>
             </div>

@@ -8,16 +8,21 @@ class ProductTable extends React.Component {
         var lastCategory = null;
 
         this.props.products.forEach((product) => {
-                if (product.category !== lastCategory) {
-                    rows.push(<CategoryRow category={product.category}
-                                           key={product.category} />);
+            if( (product.name.toLowerCase().indexOf(this.props.searchText.toLowerCase()) === -1) ||
+                (!(product.quantity > 0) && this.props.checkboxValue) ) {
+                    return;
                 }
 
-                rows.push(<ProductRow product={product}
-                                      key={product.id} />);
+            if (product.category !== lastCategory) {
+                rows.push(<CategoryRow category={product.category}
+                                       key={product.category} />);
+            }
 
-                lastCategory = product.category;
-                return;
+            rows.push(<ProductRow product={product}
+                                  key={product.id} />);
+
+            lastCategory = product.category;
+            return;
             }
         );
 
