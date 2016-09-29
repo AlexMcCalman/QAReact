@@ -1,6 +1,10 @@
 import React from 'react';
 
 class ProductRow extends React.Component {
+    handleSelection() {
+        this.props.onSelected(this.props.product);
+    };
+
     render() {
         let quantity = this.props.product.quantity > 0 ?
                         this.props.product.quantity :
@@ -9,7 +13,7 @@ class ProductRow extends React.Component {
                         </span>;
 
         return (
-            <tr>
+            <tr onClick={this.handleSelection.bind(this)}>
                 <td>{this.props.product.id}</td>
                 <td>{this.props.product.name}</td>
                 <td>£{this.props.product.price}</td>

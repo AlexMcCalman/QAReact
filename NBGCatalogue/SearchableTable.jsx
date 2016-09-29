@@ -29,7 +29,8 @@ class SearchableTable extends React.Component {
                            onUserInput={this.handleUserInput.bind(this)} />
                 <ProductTable products={this.props.products}
                               searchText={this.state.searchText}
-                              checkboxValue={this.state.checkboxValue} />
+                              checkboxValue={this.state.checkboxValue}
+                              onSelected={this.props.onSelected}/>
             </div>
         );
     };

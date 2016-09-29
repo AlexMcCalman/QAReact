@@ -19,12 +19,13 @@ class ProductTable extends React.Component {
             }
 
             rows.push(<ProductRow product={product}
-                                  key={product.id} />);
+                                  key={product.id}
+                                  onSelected={this.props.onSelected}/>);
 
             lastCategory = product.category;
             return;
-            }
-        );
+        }
+    );
 
         return (
             <table>

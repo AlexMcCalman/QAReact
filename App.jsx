@@ -17,16 +17,24 @@ class App extends React.Component {
         };
     };
 
+    handleUserSelection(product) {
+        this.setState({
+            selectedProduct: product
+        });
+    };
+
     render() {
        return(
             <div>
                 <h1>NB Gardens Catalogue</h1>
                 <div>
                     <div style={{float: 'left'}}>
-                        <SearchableTable products={this.props.products}/>
+                        <SearchableTable products={this.props.products}
+                                         selectedProduct={this.state.selectedProduct}
+                                         onSelected={this.handleUserSelection.bind(this)}/>
                     </div>
                     <div style={{display: 'inline-block', padding: 50}}>
-                        <ProductDetail selectedProduct={this.state.selectedProduct}/>
+                        <ProductDetail selectedProduct={this.state.selectedProduct} />
                     </div>
                 </div>
             </div>
