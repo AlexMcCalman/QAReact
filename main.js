@@ -3,8 +3,12 @@ import ReactDOM from 'react-dom';
 import Counter from './Counter/Counter.jsx';
 import DeckList from './List/DeckList.jsx';
 import List from './List/List.jsx';
+import {Router, Route, Link, browserHistory, IndexRoute} from 'react-router';
 
-import App from './App.jsx';
+import App from './NBGCatalogue/App.jsx';
+import Catalogue from './NBGCatalogue/Catalogue.jsx';
+import About from './NBGCatalogue/About.jsx';
+import Home from './NBGCatalogue/Home.jsx';
 import ProductDetail from './NBGCatalogue/ProductDetail.jsx';
 import CategoryRow from './NBGCatalogue/CategoryRow.jsx';
 import ProductRow from './NBGCatalogue/ProductRow.jsx';
@@ -27,4 +31,14 @@ var PRODUCTS = [
     {category: 'Animals', id: 12, name: 'Clownfish', price: 345, quantity: 0, description: "Nemo's dad."}
 ]
 
-ReactDOM.render(<App products={PRODUCTS}/>, document.getElementById('app'));
+ReactDOM.render((
+    <Router history={browserHistory}>
+        <Route path="/" component={App}>
+            <IndexRoute component={Home}/>
+            <Route path="/home" component={Home}/>
+            <Route path="/about" component={About}/>
+            <Route path="/catalogue" component={() => (<Catalogue products={PRODUCTS}/>)} />
+        </Route>
+    </Router>
+    ),
+    document.getElementById('app'));

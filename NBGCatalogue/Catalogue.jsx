@@ -1,12 +1,14 @@
 import React from 'react';
-import ProductDetail from './NBGCatalogue/ProductDetail.jsx';
-import CategoryRow from './NBGCatalogue/CategoryRow.jsx';
-import ProductRow from './NBGCatalogue/ProductRow.jsx';
-import ProductTable from './NBGCatalogue/ProductTable.jsx';
-import SearchBar from './NBGCatalogue/SearchBar.jsx';
-import SearchableTable from './NBGCatalogue/SearchableTable.jsx';
+import {Router, Route, Link, browserHistory, IndexRoute} from 'react-router';
 
-class App extends React.Component {
+import ProductDetail from './ProductDetail.jsx';
+import CategoryRow from './CategoryRow.jsx';
+import ProductRow from './ProductRow.jsx';
+import ProductTable from './ProductTable.jsx';
+import SearchBar from './SearchBar.jsx';
+import SearchableTable from './SearchableTable.jsx';
+
+class Catalogue extends React.Component {
     constructor() {
         super();
 
@@ -40,4 +42,4 @@ class App extends React.Component {
    };
 };
 
-export default App;
+export default Catalogue;
